@@ -7,9 +7,7 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatefulWidget {
   static const routeName = "/HomeScreen";
 
-  final String title;
-
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
+  const HomeScreen({Key? key,}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -21,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState(){
     var viewModel = Provider.of<HomeViewModel>(context, listen:false);
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) { 
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) { 
       viewModel.init();
     });
     super.initState();
