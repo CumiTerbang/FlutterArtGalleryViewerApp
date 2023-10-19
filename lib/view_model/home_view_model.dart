@@ -1,10 +1,10 @@
-import 'package:flutter_art_gallery_viewer_app/data/artwork_model.dart';
+import 'package:flutter_art_gallery_viewer_app/data/model/artwork_item_model.dart';
 import 'package:flutter_art_gallery_viewer_app/view_model/utils/base_view_model.dart';
 
 class HomeViewModel extends BaseViewModel {
-  var _artworks = <Artwork>[];
+  var _artworks = <ArtworkItemModel>[];
 
-  List<Artwork>? get getArtworks => _artworks;
+  List<ArtworkItemModel>? get getArtworks => _artworks;
 
   void init() {
     generateData();
@@ -13,8 +13,8 @@ class HomeViewModel extends BaseViewModel {
 
   void generateData() {
     for (var i = 0; i < 35; i++) {
-      _artworks.add(Artwork(
-          title: "title $i", imagePath: "https://picsum.photos/250?image=9"));
+      _artworks.add(ArtworkItemModel(
+          title: "title $i", imageId: "6b7944c3-eca7-60b9-cd7a-c1ec568cf429"));
     }
   }
 }

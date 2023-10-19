@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_art_gallery_viewer_app/data/artwork_model.dart';
+import 'package:flutter_art_gallery_viewer_app/data/helper/constants.dart';
+import 'package:flutter_art_gallery_viewer_app/data/model/artwork_item_model.dart';
 
 class ArtworksGridViewWidget extends StatelessWidget {
-  final List<Artwork>? artworks;
+  final List<ArtworkItemModel>? artworks;
 
   const ArtworksGridViewWidget({Key? key, required this.artworks})
       : super(key: key);
@@ -18,11 +19,12 @@ class ArtworksGridViewWidget extends StatelessWidget {
 
   List<Widget> generateChildren() {
     var result = <Widget>[];
-    if(artworks == null || artworks == []) return result;
+    if (artworks == null || artworks == []) return result;
 
     for (var element in artworks!) {
-      result.add(Container(
-        child: Image.network(element.imagePath),
+      result.add(Image.network(
+        Constants.getImagePath(element.imageId ?? ''),
+        fit: BoxFit.cover,
       ));
     }
     return result;
