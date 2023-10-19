@@ -7,7 +7,7 @@ part 'artwork_item_model.g.dart';
 @freezed
 class ArtworkItemModel with _$ArtworkItemModel {
   const factory ArtworkItemModel({
-    String? id,
+    int? id,
     String? title,
     @JsonKey(name: 'artist_display') String? artistDisplay,
     @JsonKey(name: 'date_display') String? dateDisplay,

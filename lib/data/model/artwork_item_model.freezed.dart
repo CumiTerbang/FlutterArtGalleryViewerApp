@@ -20,7 +20,7 @@ ArtworkItemModel _$ArtworkItemModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ArtworkItemModel {
-  String? get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'artist_display')
   String? get artistDisplay => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $ArtworkItemModelCopyWith<$Res> {
       _$ArtworkItemModelCopyWithImpl<$Res, ArtworkItemModel>;
   @useResult
   $Res call(
-      {String? id,
+      {int? id,
       String? title,
       @JsonKey(name: 'artist_display') String? artistDisplay,
       @JsonKey(name: 'date_display') String? dateDisplay,
@@ -76,7 +76,7 @@ class _$ArtworkItemModelCopyWithImpl<$Res, $Val extends ArtworkItemModel>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ abstract class _$$_ArtworkItemModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
+      {int? id,
       String? title,
       @JsonKey(name: 'artist_display') String? artistDisplay,
       @JsonKey(name: 'date_display') String? dateDisplay,
@@ -140,7 +140,7 @@ class __$$_ArtworkItemModelCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -182,7 +182,7 @@ class _$_ArtworkItemModel
       _$$_ArtworkItemModelFromJson(json);
 
   @override
-  final String? id;
+  final int? id;
   @override
   final String? title;
   @override
@@ -253,7 +253,7 @@ class _$_ArtworkItemModel
 
 abstract class _ArtworkItemModel implements ArtworkItemModel {
   const factory _ArtworkItemModel(
-      {final String? id,
+      {final int? id,
       final String? title,
       @JsonKey(name: 'artist_display') final String? artistDisplay,
       @JsonKey(name: 'date_display') final String? dateDisplay,
@@ -264,7 +264,7 @@ abstract class _ArtworkItemModel implements ArtworkItemModel {
       _$_ArtworkItemModel.fromJson;
 
   @override
-  String? get id;
+  int? get id;
   @override
   String? get title;
   @override

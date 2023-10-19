@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_art_gallery_viewer_app/config/service_locator.dart';
 import 'package:flutter_art_gallery_viewer_app/screens/home_screen.dart';
 import 'package:flutter_art_gallery_viewer_app/view_model/utils/providers.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  serviceLocatorSetup();
   runApp(
     MultiProvider(providers: Providers().getProviders(),
     child: MyApp(),)

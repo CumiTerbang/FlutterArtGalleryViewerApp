@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_art_gallery_viewer_app/data/helper/constants.dart';
+import 'package:flutter_art_gallery_viewer_app/data/helper/api_url.dart';
 import 'package:flutter_art_gallery_viewer_app/data/model/artwork_item_model.dart';
 
 class ArtworksGridViewWidget extends StatelessWidget {
@@ -23,7 +23,7 @@ class ArtworksGridViewWidget extends StatelessWidget {
 
     for (var element in artworks!) {
       result.add(Image.network(
-        Constants.getImagePath(element.imageId ?? ''),
+        ApiUrl.getImagePath(element.imageId ?? ''),
         fit: BoxFit.cover,
       ));
     }

@@ -8,7 +8,7 @@ part of 'artwork_item_model.dart';
 
 _$_ArtworkItemModel _$$_ArtworkItemModelFromJson(Map<String, dynamic> json) =>
     _$_ArtworkItemModel(
-      id: json['id'] as String?,
+      id: json['id'] as int?,
       title: json['title'] as String?,
       artistDisplay: json['artist_display'] as String?,
       dateDisplay: json['date_display'] as String?,
