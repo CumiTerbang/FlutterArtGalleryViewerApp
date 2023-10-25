@@ -1,13 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_art_gallery_viewer_app/config/navigation_service.dart';
+import 'package:flutter_art_gallery_viewer_app/config/navigation_service_impl.dart';
+import 'package:flutter_art_gallery_viewer_app/config/service_locator.dart';
 import 'package:flutter_art_gallery_viewer_app/data/helper/api_url.dart';
 import 'package:flutter_art_gallery_viewer_app/data/model/artwork_item_model.dart';
 import 'package:flutter_art_gallery_viewer_app/screens/detail_artwork_screen.dart';
 
 class ArtworksGridViewWidget extends StatelessWidget {
   final List<ArtworkItemModel>? artworks;
+  final Function(ArtworkItemModel item) onTap;
 
-  const ArtworksGridViewWidget({Key? key, required this.artworks})
+  const ArtworksGridViewWidget(
+      {Key? key, required this.artworks, required this.onTap})
       : super(key: key);
 
   @override
@@ -26,7 +30,7 @@ class ArtworksGridViewWidget extends StatelessWidget {
     for (var element in artworks!) {
       result.add(InkWell(
         onTap: () {
-          Navigator.pushNamed(context, DetailArtworkScreen.routeName);
+          onTap.call(element);
         },
         child: Image.network(
           ApiUrl.getImagePath(element.imageId ?? ''),

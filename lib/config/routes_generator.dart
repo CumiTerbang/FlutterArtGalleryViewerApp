@@ -8,7 +8,15 @@ class RoutesGenerator{
       case HomeScreen.routeName:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case DetailArtworkScreen.routeName:
-        return MaterialPageRoute(builder: (context) => const DetailArtworkScreen());
+        var args = settings.arguments;
+        if(args is String){
+          return MaterialPageRoute(builder: (context) => DetailArtworkScreen(artworkItemModelJson: args));
+        }else{
+          return MaterialPageRoute(
+            builder: (context) => const Scaffold(
+              body: Text("No Route Defined"),
+              ));
+        }
     }
 
     return MaterialPageRoute(

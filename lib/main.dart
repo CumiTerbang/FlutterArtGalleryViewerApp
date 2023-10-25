@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_art_gallery_viewer_app/config/navigation_service.dart';
+import 'package:flutter_art_gallery_viewer_app/config/navigation_service_impl.dart';
 import 'package:flutter_art_gallery_viewer_app/config/routes_generator.dart';
 import 'package:flutter_art_gallery_viewer_app/config/service_locator.dart';
 import 'package:flutter_art_gallery_viewer_app/screens/home_screen.dart';
@@ -7,10 +9,10 @@ import 'package:provider/provider.dart';
 
 void main() {
   serviceLocatorSetup();
-  runApp(
-    MultiProvider(providers: Providers().getProviders(),
-    child: MyApp(),)
-  );
+  runApp(MultiProvider(
+    providers: Providers().getProviders(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -25,8 +27,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: RoutesGenerator.generateRoute,
+      navigatorKey: locator<NavigationServiceImpl>().navigatorKey,
       initialRoute: HomeScreen.routeName,
     );
   }
 }
-
