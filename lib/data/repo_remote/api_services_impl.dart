@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_art_gallery_viewer_app/data/helper/api_url.dart';
 import 'package:flutter_art_gallery_viewer_app/data/model/artwork_response_model.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +9,10 @@ import 'api_services.dart';
 class ApiServicesImpl implements ApiServices {
   @override
   Future<ArtworkResponseModel> getArtworks(String page) async {
+    if (kDebugMode) {
+      print(ApiUrl.getApiUrl(ApiUrl.GET_ARTWORKS_REQUEST, {"page": page}));
+    }
+
     final response = await http.get(Uri.parse(
         ApiUrl.getApiUrl(ApiUrl.GET_ARTWORKS_REQUEST, {"page": page})));
 
@@ -21,6 +26,11 @@ class ApiServicesImpl implements ApiServices {
   @override
   Future<ArtworkResponseModel> searchArtworks(
       String page, String keyword) async {
+    if (kDebugMode) {
+      print(ApiUrl.getApiUrl(
+          ApiUrl.SEARCH_ARTWORKS_REQUEST, {"page": page, "q": keyword}));
+    }
+
     final response = await http.get(Uri.parse(ApiUrl.getApiUrl(
         ApiUrl.SEARCH_ARTWORKS_REQUEST, {"page": page, "q": keyword})));
 
