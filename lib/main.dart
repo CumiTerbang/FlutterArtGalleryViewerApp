@@ -11,7 +11,7 @@ void main() {
   serviceLocatorSetup();
   runApp(MultiProvider(
     providers: Providers().getProviders(),
-    child: MyApp(),
+    child: const MyApp(),
   ));
 }
 

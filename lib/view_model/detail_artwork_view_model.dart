@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter_art_gallery_viewer_app/config/navigation_service.dart';
 import 'package:flutter_art_gallery_viewer_app/config/navigation_service_impl.dart';

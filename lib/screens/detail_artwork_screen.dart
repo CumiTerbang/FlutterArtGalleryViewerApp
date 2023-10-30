@@ -77,7 +77,7 @@ class _DetailArtworkScreen extends State<DetailArtworkScreen> {
           padding: const EdgeInsets.all(24.0),
           color: Colors.black.withOpacity(0.5),
           child: Text(viewModel.getArtWorkDescription,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               )),
         ),
